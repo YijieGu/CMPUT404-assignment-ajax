@@ -138,9 +138,7 @@ function getPosition(e) {
 
 
 function sendcallback(objects) {
-        for (var key in objects) {
-            world[key] = objects[key];
-        }
+        Object.assign(world, objects)
     }
 
 function addEntity(entity, data) {

@@ -15,5 +15,6 @@ Generally everything is LICENSE'D under the Apache 2 license by Abram Hindle.
 Reference
 ========================
 https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/ObserverExampleAJAX/server.py
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
 
