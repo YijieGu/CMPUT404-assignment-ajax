@@ -55,6 +55,7 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
     // Remember to use application/json !
     xhr.open("POST", url);
     xhr.setRequestHeader('content-type', 'application/json');
+    xhr.setRequestHeader("Accept", "application/json");
     xhr.send(JSON.stringify(objects));
 }
 
