@@ -30,7 +30,6 @@ var host = window.location.host;
 var context = canvas.getContext("2d");
 var W = canvas.width  = window.innerWidth-6;
 var H = canvas.height = window.innerHeight-50;
-
 const image = new Image();
 image.src = "Butterfly.png";
 
@@ -137,7 +136,7 @@ function getPosition(e) {
 }
 
 
-function Sendcallback(objects) {
+function sendcallback(objects) {
         for (var key in objects) {
             world[key] = objects[key];
         }
@@ -147,7 +146,7 @@ function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
     //XXX: Send a XHTML Request that updates the entity you just  modified!
-    sendJSONXMLHTTPRequest("http://127.0.0.1:5000/entity/" + entity, data, Sendcallback)
+    sendJSONXMLHTTPRequest("http://127.0.0.1:5000/entity/" + entity, data, sendcallback)
 
 }
 
@@ -272,7 +271,7 @@ mouse.mousedraggers.push(function(x,y,clicked,e) {
 
 function update() {
     //XXX: TODO Get the world from the webservice using a XMLHTTPRequest
-    sendJSONXMLHTTPRequest("http://127.0.0.1:5000/world", null, Sendcallback);
+    sendJSONXMLHTTPRequest("http://127.0.0.1:5000/world", null, sendcallback);
     drawNextFrame();
     drawFrame();
 }
